@@ -1,0 +1,2 @@
+version,device name,recording epoch time,recording time,recording timezone,platform,appVersion,device id,sensors,sampleRateMs
+3,CPH2399,1694674020563,2023-09-14_06-47-00,Europe/Paris,android,1.20.0,c8dd5094-d4bd-47e1-b2c0-cc4205c1707a,Accelerometer|Gravity|Gyroscope|Orientation|Magnetometer|Location|Pedometer|Annotation|TotalAcceleration|LocationNetwork|LocationGps,0|0|0|0|0|0|10||0|0|0

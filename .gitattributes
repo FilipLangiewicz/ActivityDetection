@@ -1,0 +1,6 @@
+Cycling_4.csv filter=lfs diff=lfs merge=lfs -text
+Cycling_5.csv filter=lfs diff=lfs merge=lfs -text
+Cycling_6.csv filter=lfs diff=lfs merge=lfs -text
+Sitting_8.csv filter=lfs diff=lfs merge=lfs -text
+Sitting_9.csv filter=lfs diff=lfs merge=lfs -text
+Walking_12.csv filter=lfs diff=lfs merge=lfs -text

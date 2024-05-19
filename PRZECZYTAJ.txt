@@ -1,0 +1,4 @@
+1.
+nie commitujemy danych, dane commitujemy po skończeniu projektu.
+2. 
+Do zadziałania programu utworz folder cleared_data oraz folder merged_data na wysokości code.

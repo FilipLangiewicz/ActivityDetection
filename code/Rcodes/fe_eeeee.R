@@ -17,7 +17,6 @@ for (file in files) {
   
   assign(file_name, file_data)
   
-  vars <- c(vars, file_data)
 }
 
 # Funkcja do obliczania odległości między dwoma punktami na sferze (haversine formula)
@@ -41,19 +40,12 @@ haversine_distance <- function(lat1, lon1, lat2, lon2) {
   return(distance) # Odległość w kilometrach
 }
 
-# tmp <- Cycling_1 %>% 
-#   mutate(Gyroscope = sqrt(Gyroscope_x^2 + Gyroscope_y^2 + Gyroscope_z^2)) %>%
-#   mutate(Magnetometer = sqrt(Magnetometer_x^2 + Magnetometer_y^2 + Magnetometer_z^2)) %>%
-#   mutate(TotalAcceleration = sqrt(TotalAcceleration_x^2 + TotalAcceleration_y^2 + TotalAcceleration_z^2)) %>% 
-#   select(time, Gyroscope, Location_speed, Orientation_roll, Orientation_pitch, Orientation_yaw, Pedometer_steps, Magnetometer, TotalAcceleration, id, Location_longitude, Location_latitude, Location_altitude, Location_bearing)
-
-
 summarise_activity <- function(df) {
   df <- df %>% 
     mutate(Gyroscope = sqrt(Gyroscope_x^2 + Gyroscope_y^2 + Gyroscope_z^2)) %>%
     mutate(Magnetometer = sqrt(Magnetometer_x^2 + Magnetometer_y^2 + Magnetometer_z^2)) %>%
     mutate(TotalAcceleration = sqrt(TotalAcceleration_x^2 + TotalAcceleration_y^2 + TotalAcceleration_z^2)) %>% 
-    select(id, time, Gyroscope, Location_speed, Orientation_roll, Orientation_pitch, Orientation_yaw, Pedometer_steps, Magnetometer, TotalAcceleration, id, Location_longitude, Location_latitude, Location_altitude, Location_bearing)
+    select(id, time, Gyroscope, Location_speed, Orientation_roll, Orientation_pitch, Orientation_yaw, Pedometer_steps, Magnetometer, TotalAcceleration, Location_longitude, Location_latitude, Location_altitude, Location_bearing)
   
   df_tmp <- data.frame(
     id = df %>% select(id) %>% unique(),
@@ -122,6 +114,13 @@ result <- summarise_activity(Cycling_1) %>%
   rbind(summarise_activity(Sitting_10)) %>%
   rbind(summarise_activity(Walking_11)) %>%
   rbind(summarise_activity(Walking_12))
+
+
+df <- df %>% 
+  mutate(Gyroscope = sqrt(Gyroscope_x^2 + Gyroscope_y^2 + Gyroscope_z^2)) %>%
+  mutate(Magnetometer = sqrt(Magnetometer_x^2 + Magnetometer_y^2 + Magnetometer_z^2)) %>%
+  mutate(TotalAcceleration = sqrt(TotalAcceleration_x^2 + TotalAcceleration_y^2 + TotalAcceleration_z^2)) %>% 
+  select(id, time, Gyroscope, Location_speed, Orientation_roll, Orientation_pitch, Orientation_yaw, Pedometer_steps, Magnetometer, TotalAcceleration, id, Location_longitude, Location_latitude, Location_altitude, Location_bearing)
 
 
 
